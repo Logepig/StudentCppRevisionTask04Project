@@ -38,5 +38,17 @@ string task02(int number) {
 	if (number < 0) {
 		return "error";
 	}
-	return to_string(number / 3600) + ":" + to_string(number % 3600 / 60) + ":" + to_string(number % 3600 % 60);
+	if ((number % 3600 / 60) < 10 && (number % 3600 % 60) < 10) {
+		return to_string((number / 3600) % 24) + ":" + "0" + to_string(number % 3600 / 60) + ":" + "0" + to_string(number % 3600 % 60);
+
+	}
+	if ((number % 3600 / 60) < 10 && (number % 3600 % 60) >= 10) {	
+		return to_string((number / 3600) % 24) + ":" + "0" + to_string(number % 3600 / 60) + ":" + to_string(number % 3600 % 60);
+
+	}
+	if ((number % 3600 / 60) >= 10 && (number % 3600 % 60) < 10) {
+		return to_string((number / 3600) % 24) + ":" + to_string(number % 3600 / 60) + ":" + "0" + to_string(number % 3600 % 60);
+		
+	}
+	return to_string((number / 3600) % 24) + ":" + to_string(number % 3600 / 60) + ":" + to_string(number % 3600 % 60);
 }
