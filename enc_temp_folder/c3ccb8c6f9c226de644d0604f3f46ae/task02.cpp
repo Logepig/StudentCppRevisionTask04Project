@@ -35,8 +35,6 @@
 */
 
 string task02(int number) {
-	if (number < 0) {
-		return "error";
-	}
-	return to_string(number / 3600) + ":" + to_string(number % 3600 / 60) + ":" + to_string(number % 3600 % 60);
+	if(number < 1)
+	return "error";
 }
